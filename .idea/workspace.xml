@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54b2ab2a-f3f0-4399-80b5-4490aee9da85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Poutemon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/acier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/combat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/dragon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/eau.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/electrik.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/fee.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/feu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/glace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/insecte.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/normal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/plante.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/poison.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/psy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/roche.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/sol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/spectre.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/tenebres.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bo/elements/vol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/insecte.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/insecte.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/normal.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/normal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/plante.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/plante.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/poison.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/poison.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/psy.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/psy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/roche.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/roche.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/sol.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/sol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/spectre.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/spectre.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/tenebres.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/tenebres.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/vol.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/vol.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

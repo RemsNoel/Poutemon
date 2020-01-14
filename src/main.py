@@ -14,8 +14,8 @@ def main():
     BLUE = (0, 0, 128) # Celui non plus mais on fait du mieux qu'on peut
 
     # create a surface on screen that has the size of 1280 x 720
-    screen_width = 750;
-    screen_height = 596;
+    screen_width = 750
+    screen_height = 596
     
     screen = pygame.display.set_mode((screen_width,screen_height))
     screen_rect = screen.get_rect()
@@ -58,6 +58,9 @@ def main():
     image = pygame.image.load("angry.png")
     image1 = pygame.image.load("chut.png")
     dialogue = pygame.image.load("dialogue.png")
+    i = 0; # variable pour avancer dans le dialogue
+    imin = 0;
+    imax = 2;
 
     
 
@@ -67,15 +70,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 done = True
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_a:
-                    text,rect = pygame_text[0]
-                elif event.key == pygame.K_b:
-                    text,rect = pygame_text[1]
-                elif event.key == pygame.K_c:
-                    text,rect = pygame_text[2]
-                elif event.key == pygame.K_ESCAPE:
-                    done = True
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                i = i + 1
+                text,rect = pygame_text[i]
+                #done = True
 
             # # define the position of the smiley
             xpos = 29
@@ -103,9 +101,6 @@ def main():
             pygame.display.flip()
         
             clock.tick(60)
-
-
-
 
             # # only do something if the event is of type QUIT
             # if event.type == pygame.QUIT:

@@ -49,7 +49,7 @@ def main():
         return text,rect
     
     pygame_text = []
-    possible_outcome = ['Je vais te goumer.', 'Tva voir.', 'rira bien qui rira le dernier.']
+    possible_outcome = ['Je vais te goumer.', 'Tva voir.', 'rira bien qui rira le dernier.', 'arrête de cliquer.', 'ça va mal se passer.']
     for outcome in possible_outcome:
         pygame_text.append(make_text(outcome, 24, BLUE))
     text,rect = pygame_text[0]#set a default
@@ -58,9 +58,9 @@ def main():
     image = pygame.image.load("angry.png")
     image1 = pygame.image.load("chut.png")
     dialogue = pygame.image.load("dialogue.png")
-    i = 0; # variable pour avancer dans le dialogue
+    i = 0; # variable pour avancer dans le dialogue (ou tout simplement dans le jeu)
     imin = 0;
-    imax = 2;
+    imax = len(possible_outcome) - 1;
 
     
 
@@ -71,28 +71,15 @@ def main():
             if event.type == pygame.QUIT:
                 done = True
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                i = i + 1
+                if i < imax:
+                    i = i + 1
                 text,rect = pygame_text[i]
-                #done = True
+                print(imax)
+                print(i)
 
             # # define the position of the smiley
             xpos = 29
             ypos = 50
-
-            # # now blit the smiley on screen
-            # screen.blit(image1, (-15, -250))
-            # screen.blit(image, (xpos, ypos))
-            # screen.blit(dialogue, (-102, 410))
-            # screen.blit(text, (40, 486))
-            # # and update the screen (don't forget that!)
-            # pygame.display.flip()
-
-            # if event.type == pygame.MOUSEBUTTONDOWN:
-            #     if event.button == 1 and event.pos[0] < screen_width and event.pos[1] < screen_height:
-            #         text2 =  font.render('Ahah... jrigole', True, BLUE)
-            #         screen.blit(dialogue, (-102, 410))
-            #         screen.blit(text2, (40, 486))
-            #         pygame.display.flip()
 
             screen.blit(image1, (-15, -250))
             screen.blit(image, (xpos, ypos))
@@ -106,7 +93,9 @@ def main():
             # if event.type == pygame.QUIT:
             #     # change the value to False, to exit the main loop
             #     running = False
-    pygame.quit()
+
+    screen.blit(bg1, (0, 0))
+    pygame.display.flip()
      
 # run the main function only if this module is executed as the main script
 # (if you import this as a module then nothing is executed)

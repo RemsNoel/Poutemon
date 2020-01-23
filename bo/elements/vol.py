@@ -1,5 +1,5 @@
 class Vol :
-
+    name = "vol"
 
     def attaque(self, typeDefense):
         switcher = {

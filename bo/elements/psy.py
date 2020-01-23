@@ -1,5 +1,5 @@
 class Psy :
-
+    name = "psy"
 
     def attaque(self, typeDefense):
         switcher = {

@@ -1,5 +1,5 @@
 class Poison :
-
+    name = "poison"
 
     def attaque(self, typeDefense):
         switcher = {

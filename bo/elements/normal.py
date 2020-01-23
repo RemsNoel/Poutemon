@@ -1,5 +1,5 @@
 class Normal :
-
+    name = "normal"
 
     def attaque(self, typeDefense):
         switcher = {

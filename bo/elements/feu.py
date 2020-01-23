@@ -1,5 +1,5 @@
 class Feu :
-
+    name = "feu"
 
     def attaque(self, typeDefense):
         switcher = {

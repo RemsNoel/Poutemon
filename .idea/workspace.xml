@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54b2ab2a-f3f0-4399-80b5-4490aee9da85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bo/fight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bo/type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Poutemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Poutemon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/acier.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/acier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/dragon.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/dragon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/eau.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/eau.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/electrik.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/electrik.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/fee.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/fee.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/feu.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/feu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bo/elements/glace.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/glace.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bo/elements/insecte.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/insecte.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bo/elements/normal.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/normal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bo/elements/plante.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/plante.py" afterDir="false" />
@@ -14,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/bo/elements/tenebres.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/tenebres.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bo/elements/vol.py" beforeDir="false" afterPath="$PROJECT_DIR$/bo/elements/vol.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,22 +45,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.App">
     <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -101,6 +107,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -119,10 +137,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="645" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1579772138831">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="645" y="220" key="#com.intellij.ide.util.MemberChooser/1680.26.1280.984/0.0.1680.1010@0.0.1680.1010" timestamp="1579772138831" />
+    <state width="1658" height="267" key="GridCell.Tab.0.bottom" timestamp="1579773162474">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1658" height="267" key="GridCell.Tab.0.bottom/1680.26.1280.984/0.0.1680.1010@0.0.1680.1010" timestamp="1579773162474" />
+    <state width="1658" height="267" key="GridCell.Tab.0.center" timestamp="1579773162474">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1658" height="267" key="GridCell.Tab.0.center/1680.26.1280.984/0.0.1680.1010@0.0.1680.1010" timestamp="1579773162474" />
+    <state width="1658" height="267" key="GridCell.Tab.0.left" timestamp="1579773162474">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1658" height="267" key="GridCell.Tab.0.left/1680.26.1280.984/0.0.1680.1010@0.0.1680.1010" timestamp="1579773162474" />
+    <state width="1658" height="267" key="GridCell.Tab.0.right" timestamp="1579773162474">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1658" height="267" key="GridCell.Tab.0.right/1680.26.1280.984/0.0.1680.1010@0.0.1680.1010" timestamp="1579773162474" />
   </component>
 </project>

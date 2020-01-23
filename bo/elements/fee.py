@@ -1,5 +1,5 @@
 class Fee :
-
+    name = "fee"
 
     def attaque(self, typeDefense):
         switcher = {

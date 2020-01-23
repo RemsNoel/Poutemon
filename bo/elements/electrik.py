@@ -1,5 +1,5 @@
 class Electrik :
-
+    name = "electrik"
 
     def attaque(self, typeDefense):
         switcher = {

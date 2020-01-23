@@ -1,5 +1,5 @@
 class Eau :
-
+    name = "eau"
 
     def attaque(self, typeDefense):
         switcher = {

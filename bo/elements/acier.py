@@ -1,5 +1,5 @@
-class Acier :
-
+class Acier() :
+    name = "acier"
 
     def attaque(self, typeDefense):
         switcher = {

@@ -1,5 +1,5 @@
 class Sol :
-
+    name = "sol"
 
     def attaque(self, typeDefense):
         switcher = {

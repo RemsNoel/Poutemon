@@ -1,10 +1,13 @@
-# import the pygame module, so you can use it
 import pygame
 import sys
 from accueil import *
 from avance import *
 from jeux import *
 from fight import *
+from boutique import *
+from pokedex import *
+
+
 
 pygame.init()
 
@@ -14,31 +17,36 @@ size = width, height = 1500, 1000
 screen = pygame.display.set_mode(size)
 
 Avancement = avance()
-print (Avancement.get_lancement())
-
-
 lancement = accueil(screen,Avancement)
 player = joueur()
-
 game = jeux(screen,Avancement,player)
 
-while Avancement.get_lancement() :
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
 
-    lancement.main()
+while True:
 
-while Avancement.get_lancement()!= True and Avancement.get_jeux() and Avancement.get_combat() != True :
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
+    while Avancement.get_lancement() :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
 
-    
-    game.main()
+        lancement.main()
 
-while Avancement.get_combat() == True :
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
+    while Avancement.get_lancement()!= True and Avancement.get_jeux() and Avancement.get_combat() != True and Avancement.get_pokedex() == False:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
 
-    combat = fight(screen,Avancement,player,game.get_zone(),game)
-    combat.main()
-    pygame.time.wait(10000)
+        
+        game.main()
+
+    while Avancement.get_combat() == True :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
+
+        combat = fight(screen,Avancement,player,game)
+        combat.main()
+
+    while Avancement.get_pokedex() == True :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
+        affpokedex = pokedex(player,screen,Avancement)
+        affpokedex.main()
+            

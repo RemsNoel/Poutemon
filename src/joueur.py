@@ -6,16 +6,21 @@ class joueur():
     def __init__(self):
         self.argent = 100
         self.objet = []
-        self.pokemon = ["bulbasaur","","",""]
+        self.pokemon = ["bulbasaur","eevee"]
 
-    def get_pokemon(self,i):
+    def get_pokemon(self):
 
-        return self.pokemon[i]
+        return self.pokemon
+
     
     def addpokemon(self,pokemon):
-        for i in range(3):
-            if self.pokemon[i] == "":
-                self.pokemon[i].replace(self.pokemon[i],pokemon.get_name())
+        if len(self.pokemon) < 6:
+            self.pokemon.append(pokemon.get_name())
+            print (self.pokemon)
+        
+
+
+       
 
 
 

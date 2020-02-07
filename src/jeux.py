@@ -5,6 +5,7 @@ from avance import *
 from zones import *
 from pokemon import *
 from joueur import *
+from pokedex import *
 
 class jeux ():
 
@@ -12,7 +13,6 @@ class jeux ():
 
         self.avancement = Avancement
         self.screen = screen
-        self.joueur = joueur
 
         self.zone2 = zones("./resources/zones_debut/maison_professeur.jpg","ville","","Sortir de la ville")
         self.zone1 = zones("./resources/zones_debut/maison_joueur.jpg","safe",self.zone2,"Aller vers la maison du professeur")
@@ -22,6 +22,7 @@ class jeux ():
 
         self.highlight = pygame.image.load("./resources/fond_ecran/highlight.png")
         self.fond = pygame.image.load("./resources/fond_ecran/blackscreen.png")
+        
 
         
     def main(self):
@@ -34,6 +35,10 @@ class jeux ():
         elif self.rect_pokedex.collidepoint(pygame.mouse.get_pos()):
             self.screen.blit(self.highlight, (50, 680))
             pygame.display.flip()
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    self.avancement.set_pokedex(True)
+
         elif self.rect_quitter.collidepoint(pygame.mouse.get_pos()):    
             self.screen.blit(self.highlight, (50, 930))
             pygame.display.flip()
@@ -121,6 +126,9 @@ class jeux ():
         self.screen.blit(self.zonesuivante_texte, (400, 800))
 
         pygame.display.flip()
+
+        
+
 
 
 

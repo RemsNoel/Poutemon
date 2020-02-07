@@ -21,12 +21,6 @@ class pokemon():
         for i in range(4):
             self.attaques.append(self.jsonfile["moves"][i]["move"]["name"])
 
-
-
-    def main(self):
-        print(self.r.text)
-
-
     def get_front_sprite(self):
         return self.front_sprite
 

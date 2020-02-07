@@ -8,6 +8,7 @@ class avance():
         self.lancement = True
         self.jeux = True
         self.combat = False
+        self.pokedex = False
 
     def get_lancement(self):
         return self.lancement
@@ -18,6 +19,9 @@ class avance():
     def get_combat(self):
         return self.combat
 
+    def get_pokedex(self):
+        return self.pokedex
+
     def set_lancement(self,etat):
         self.lancement = etat
         
@@ -27,4 +31,6 @@ class avance():
     def set_combat(self,etat):
         self.combat = etat
 
+    def set_pokedex(self,etat):
+        self.pokedex = etat
     

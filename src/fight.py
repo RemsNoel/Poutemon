@@ -6,9 +6,10 @@ from pokemon import *
 from capture import *
 from joueur import *
 
+
 class fight():
 
-    def __init__(self,screen,Avancement,joueur,zone,game):
+    def __init__(self,screen,Avancement,joueur,game):
         self.avancement = Avancement
         self.screen = screen
         self.game = game
@@ -18,32 +19,26 @@ class fight():
         self.text = pygame.image.load("./resources/texte/text.png")
         self.font_obj = pygame.font.Font('./resources/font/Mermaid1001.ttf', 32)
         self.highlight = pygame.image.load("./resources/fond_ecran/highlight.png")
-        self.point = pygame.image.load("./resources/point.png")
+        self.captureE = pygame.image.load("./resources/texte/captureE.png")
+        self.captureR = pygame.image.load("./resources/texte/captureR.png")
+
+        self.defaite = pygame.image.load("./resources/texte/defaite.png")
+        self.victoire = pygame.image.load("./resources/texte/victoire.png")
+
 
         self.joueur = joueur
        
-        self.zone = zone
+        self.zone = self.game.get_zone()
 
         self.ennemi = self.adversaire(self.zone)
         self.pokesauvage = pokemon(self.ennemi)
 
-        self.poke1 = self.joueur.get_pokemon(0)
-        if self.poke1 != "":
-            self.pokemon1 = pokemon(self.poke1)
-
-        self.poke2 = self.joueur.get_pokemon(1)
-        if self.poke2 != "":
-            self.pokemon2 = pokemon(self.poke2)
-
-        self.poke3 = self.joueur.get_pokemon(2)
-        if self.poke3 != "":
-            self.pokemon3 = pokemon(self.poke3)
-
-        self.poke4 = self.joueur.get_pokemon(3)
-        if self.poke4 != "":
-            self.pokemon4 = pokemon(self.poke4)
-
-        self.pokemonjoueur = self.pokemon1
+        self.listpokejoueur = self.joueur.get_pokemon()
+        print(self.listpokejoueur)
+        self.pokemonjoueur = pokemon(self.listpokejoueur[0])
+        self.pokejouable = len(self.listpokejoueur)
+        self.pokejoue = 1
+         
 
         self.combatencours = True
         self.tour = True
@@ -58,7 +53,7 @@ class fight():
             print (self.pokesauvage.get_hp())
             print (self.pokemonjoueur.get_hp())
 
-            while self.tour == True:
+            while self.tour == True and self.combatencours == True:
                 self.blitbase()
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT: sys.exit()
@@ -72,59 +67,104 @@ class fight():
                             print (self.resultatcapture)
 
                             if self.resultatcapture == True:
+                                self.screen.blit(self.captureR, (0, -100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
                                 print ("le pokemon est capture")
                                 self.joueur.addpokemon(self.pokesauvage)
-
-                                self.tour = False
                                 self.combatencours = False
-                              
+                                self.tour = False
                                 
-
+                              
                             if self.resultatcapture == False:
+                                self.screen.blit(self.captureE, (0, -100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
                                 print ("le pokemon c'est enfui")
                                 self.tour = False
 
                         if self.rect_attaque1.collidepoint(pygame.mouse.get_pos()):
-                            self.screen.blit(self.point, (380, 800))
-                            pygame.display.flip()
+                       
 
                             self.pokesauvage.set_hp(5)
-                            print (self.pokesauvage.get_hp())
-                            self.tour = False
+                            if self.pokesauvage.get_hp() <= 0:
+                                self.screen.blit(self.victoire, (0, -100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
+                                self.combatencours = False
+                                self.tour = False
+                         
+                                
+                            else :
+                                self.tour = False
 
                         if self.rect_attaque2.collidepoint(pygame.mouse.get_pos()):
-                            self.screen.blit(self.point, (380, 800))
-                            pygame.display.flip()
-
-                            self.pokesauvage.set_hp(7)
-                            print (self.pokesauvage.get_hp())
-                            self.tour = False
+                            self.pokesauvage.set_hp(40)
+                            if self.pokesauvage.get_hp() <= 0:
+                                self.screen.blit(self.victoire, (0, -100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
+                                self.combatencours = False
+                                self.tour = False
+                   
+                            else :
+                                self.tour = False
 
                         if self.rect_attaque3.collidepoint(pygame.mouse.get_pos()):
-                            self.screen.blit(self.point, (380, 800))
-                            pygame.display.flip()
-
-                            self.pokesauvage.set_hp(2)
-                            print (self.pokesauvage.get_hp())
-                            self.tour = False
+                            self.pokesauvage.set_hp(20)
+                            if self.pokesauvage.get_hp() <= 0:
+                                self.screen.blit(self.victoire, (0,-100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
+                                self.combatencours = False
+                                self.tour = False
+                                
+                            else :
+                                self.tour = False
 
                         if self.rect_attaque4.collidepoint(pygame.mouse.get_pos()):
-
-                            self.screen.blit(self.point, (380, 800))
-                            pygame.display.flip()
-
                             self.pokesauvage.set_hp(3)
-                            print (self.pokesauvage.get_hp())
-                            self.tour = False
+                            if self.pokesauvage.get_hp() <= 0:
+                                self.screen.blit(self.victoire, (0, -100))
+                                pygame.display.flip()
+                                pygame.time.wait(1000)
+                                self.combatencours = False
+                                self.tour = False
+                                
+                            else :
+                                self.tour = False
 
-            while self.tour == False:
+            while self.tour == False and self.combatencours == True:
                 self.blitbase()
-                self.pokemonjoueur.set_hp(4)
-                print (self.pokemonjoueur.get_hp())
-                self.tour = True
+                pygame.time.wait(1000)
+
+                self.pokemonjoueur.set_hp(10)
+
+                
+                if self.pokemonjoueur.get_hp() <= 0:
+                    self.pokejoue += 1
+                    print (self.pokejoue)
+                    print (self.pokejouable)
+
+                    if self.pokejoue < self.pokejouable:
+                        self.pokemonjoueur = pokemon(self.listpokejoueur[self.pokejoue-1])
+                        print (self.pokemonjoueur.get_name())
+                        self.tour = True   
+                            
+                    else:
+                        self.screen.blit(self.defaite, (0, -100))
+                        pygame.display.flip()
+                        pygame.time.wait(1000)
+                        self.combatencours = False
+                        self.tour = True
+                        
+
+                else :
+                    self.tour = True
 
         self.avancement.set_combat(False)
         self.avancement.set_jeux(True)
+        
         
               
 

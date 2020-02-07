@@ -5,7 +5,7 @@ from avance import *
 
 class boutique():
 
-    def __init__(self, screen, Avancement, player):
+    def __init__(self, screen, Avancement, joueur):
         self.fond = pygame.image.load("./resources/boutique/shop_pokemon.jpg")
         self.fond = pygame.transform.scale(self.fond, (1500, 1000))
         self.pokeball = pygame.image.load("./resources/boutique/pokeball.png")

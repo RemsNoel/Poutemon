@@ -10,6 +10,7 @@ class accueil ():
         self.fond = pygame.transform.scale(self.fond, (1500, 1000))
         self.commencer = pygame.image.load("./resources/fond_ecran/commencer.png")
         self.highlight = pygame.image.load("./resources/fond_ecran/highlight.png")
+        self.merci = pygame.image.load("./resources/texte/remerciement.png")
         
         
         self.avancement = Avancement
@@ -42,9 +43,19 @@ class accueil ():
                 if event.type == MOUSEBUTTONDOWN and event.button == 1:
                     self.avancement.set_lancement(False)
                     self.avancement.set_player(True)
+
+        if self.rect_credit.collidepoint(pygame.mouse.get_pos()):
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    self.screen.blit(self.fond, (0, 0))
+                    self.screen.blit(self.merci, (0, 0))
+                    pygame.display.flip()
+                    pygame.time.wait(4000)
+                        
                     
         else:
             self.blitbase()
+            pygame.display.flip()
         
     
 
@@ -67,12 +78,18 @@ class accueil ():
         self.rect_rejoindre = self.rejoindre.get_rect()
         self.rect_rejoindre.topleft = (10, 400)
 
+        self.credit =  self.font_obj.render('credit', False, (255,255,255))
+        self.screen.blit(self.credit, (10, 450))
+        self.rect_credit = self.credit.get_rect()
+        self.rect_credit.topleft = (10, 450)
 
         pygame.display.flip()
+        
 
     def quitter(self):
         for event in pygame.event.get():
             if event.type == QUIT:
                 exit()
+
 
    

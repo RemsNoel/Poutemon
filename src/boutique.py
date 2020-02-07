@@ -17,13 +17,13 @@ class boutique():
 
         # API - Récupération du cost
         self.pokeball = "poke-ball"
-        self.pokeballObj = objets(self.pokeball)
+        self.pokeballObj = objets(self.pokeball,1)
         self.pokeballCost = self.pokeballObj.get_cost()
         self.superball = "great-ball"
-        self.superballObj = objets(self.superball)
+        self.superballObj = objets(self.superball,0.7)
         self.superballCost = self.superballObj.get_cost()
         self.hyperball = "ultra-ball"
-        self.hyperballObj = objets(self.hyperball)
+        self.hyperballObj = objets(self.hyperball,0.2)
         self.hyperballCost = self.hyperballObj.get_cost()
 
         self.etat = True

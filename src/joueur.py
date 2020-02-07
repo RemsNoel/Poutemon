@@ -8,7 +8,7 @@ class joueur():
         self.objet = []
         self.pokemon = ["bulbasaur"]
         self.items =  {}
-        self.items["pokeball"] = 0
+        self.items["pokeball"] = 2
         self.items["superball"] = 0
         self.items["hyperball"] = 0
 

@@ -25,7 +25,7 @@ class fight():
 
         self.defaite = pygame.image.load("./resources/texte/defaite.png")
         self.victoire = pygame.image.load("./resources/texte/victoire.png")
-
+        self.balle = pygame.image.load("./resources/texte/pokeball.png")
 
         self.joueur = joueur
        
@@ -63,30 +63,43 @@ class fight():
                     if event.type == MOUSEBUTTONDOWN and event.button == 1:
                         if self.rect_capture.collidepoint(pygame.mouse.get_pos()):
 
-                            self.capture = capture(0.5,self.pokesauvage)
-                            self.resultatcapture = self.capture.get_result()
-                            print (self.resultatcapture)
-
-                            if self.resultatcapture == True:
-                                self.screen.blit(self.captureR, (0, -100))
-                                pygame.display.flip()
-                                pygame.time.wait(1000)
-                                print ("le pokemon est capture")
-                                self.items = self.joueur.get_items()
-                                self.itemsPokeball = self.items.get("pokeball")
+                            
+                            self.items = self.joueur.get_items()
+                            self.itemsPokeball = self.items.get("pokeball")
+                            
+                            if self.itemsPokeball > 0:
                                 self.itemsPokeball -= 1
-                                self.joueur.addpokemon(self.pokesauvage)
-                                self.combatencours = False
-                                self.tour = False
-                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(15,20))
+                                self.joueur.set_pokeball(self.itemsPokeball)
+
+                                self.capture = capture(0.5 ,self.pokesauvage)
+                                self.resultatcapture = self.capture.get_result()
+                                print (self.resultatcapture)
+
+                                if self.resultatcapture == True:
+
+                                    self.screen.blit(self.captureR, (0, -100))
+                                    pygame.display.flip()
+                                    pygame.time.wait(1000)
+                                    print ("le pokemon est capture")
+
+
+                                    self.joueur.addpokemon(self.pokesauvage)
+                                    self.combatencours = False
+                                    self.tour = False
+                                    self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(15,20))
+                                    
                                 
-                              
-                            if self.resultatcapture == False:
-                                self.screen.blit(self.captureE, (0, -100))
+                                if self.resultatcapture == False:
+                                    self.screen.blit(self.captureE, (0, -100))
+                                    pygame.display.flip()
+                                    pygame.time.wait(1000)
+                                    print ("le pokemon s'est enfui")
+                                    self.tour = False
+                            else:
+                                self.screen.blit(self.balle, (0, -100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
-                                print ("le pokemon s'est enfui")
-                                self.tour = False
+                                self.tour = False           
 
                         if self.rect_attaque1.collidepoint(pygame.mouse.get_pos()):
                        

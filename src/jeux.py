@@ -16,7 +16,7 @@ class jeux ():
 
         self.zone3 = zones("./resources/zones_debut/shop_pokemon.jpg","shop","","")
         self.zone2 = zones("./resources/zones_debut/maison_professeur.jpg","ville",self.zone3,"Aller vers la boutique")
-        self.zone1 = zones("./resources/zones_debut/maison_joueur.jpg","safe",self.zone2,"Aller vers la maison du professeur")
+        self.zone1 = zones("./resources/zones_debut/maison_joueur.jpg","ville",self.zone2,"Aller vers la maison du professeur")
       
         self.joueur = joueur
         self.zone_actuel = self.zone1
@@ -55,20 +55,21 @@ class jeux ():
             pygame.display.flip()
             for event in pygame.event.get():
                 if event.type == MOUSEBUTTONDOWN and event.button == 1:
-
-                    if self.zone_actuel.get_typezone() == "safe":
+                    # if self.zone_actuel.get_typezone() == "safe":
                         
-                        self.texte()
-                        self.popupcombat = pygame.image.load("./resources/texte/nocombat.png")
-                        self.screen.blit(self.popupcombat, (0,-100))
-                        pygame.display.flip()
-                        pygame.time.wait(1000)
-                        self.texte()
+                    #     self.texte()
+                    #     self.popupcombat = pygame.image.load("./resources/texte/nocombat.png")
+                    #     self.screen.blit(self.popupcombat, (0,-100))
+                    #     pygame.display.flip()
+                    #     pygame.time.wait(1000)
+                    #     self.texte()
+                    #     self.avancement.set_combat(False)
 
                     if self.zone_actuel.get_typezone() == "shop":
                         
                         self.txt = self.font_obj.render('Tu te balades dans la zone ...', False, (255,255,255))
                         pygame.time.wait(2000)
+                        self.avancement.set_combat(False)
                         self.avancement.set_shop(True)
 
                     else :

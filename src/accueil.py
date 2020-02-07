@@ -10,7 +10,7 @@ class accueil ():
         self.fond = pygame.transform.scale(self.fond, (1500, 1000))
         self.commencer = pygame.image.load("./resources/fond_ecran/commencer.png")
         self.highlight = pygame.image.load("./resources/fond_ecran/highlight.png")
-        self.etat = True
+        
         
         self.avancement = Avancement
         self.screen = screen

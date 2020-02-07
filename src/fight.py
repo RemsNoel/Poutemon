@@ -5,6 +5,7 @@ import random
 from pokemon import *
 from capture import *
 from joueur import *
+from objets import *
 
 
 class fight():
@@ -71,6 +72,9 @@ class fight():
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
                                 print ("le pokemon est capture")
+                                self.items = self.joueur.get_items()
+                                self.itemsPokeball = self.items.get("pokeball")
+                                self.itemsPokeball -= 1
                                 self.joueur.addpokemon(self.pokesauvage)
                                 self.combatencours = False
                                 self.tour = False
@@ -80,7 +84,7 @@ class fight():
                                 self.screen.blit(self.captureE, (0, -100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
-                                print ("le pokemon c'est enfui")
+                                print ("le pokemon s'est enfui")
                                 self.tour = False
 
                         if self.rect_attaque1.collidepoint(pygame.mouse.get_pos()):

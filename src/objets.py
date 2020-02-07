@@ -8,7 +8,11 @@ class objets():
         self.r = requests.get(url)
         self.jsonfile = self.r.json()
         self.cost = int(self.jsonfile["cost"])
+        self.rate = 0
         
 
     def get_cost(self):
         return self.cost
+
+    def get_rate(self):
+        return self.rate

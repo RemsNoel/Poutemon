@@ -41,13 +41,14 @@ class boutique():
 
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if self.rect_pokeball.collidepoint(pygame.mouse.get_pos()):
-                    self.argent = self.argent - self.pokeballCost
+                    if self.argent >= self.pokeballCost:
+                        self.argent = self.argent - self.pokeballCost
                 elif self.rect_superball.collidepoint(pygame.mouse.get_pos()):
-                    self.argent = self.argent - self.superballCost
+                    if self.argent >= self.superballCost:
+                        self.argent = self.argent - self.superballCost
                 elif self.rect_hyperball.collidepoint(pygame.mouse.get_pos()):
-                    self.argent = self.argent - self.hyperballCost
-
-
+                    if self.argent >= self.hyperballCost:
+                        self.argent = self.argent - self.hyperballCost
 
     def blitbase(self):
         self.screen.blit(self.fond, (0, 0))

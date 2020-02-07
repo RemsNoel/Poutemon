@@ -4,7 +4,7 @@ import sys
 class joueur():
 
     def __init__(self):
-        self.argent = 100
+        self.argent = 1000
         self.objet = []
         self.pokemon = ["bulbasaur","","",""]
 
@@ -16,6 +16,9 @@ class joueur():
         for i in range(3):
             if self.pokemon[i] == "":
                 self.pokemon[i].replace(self.pokemon[i],pokemon.get_name())
+
+    def get_argent(self):
+        return self.argent
 
 
 

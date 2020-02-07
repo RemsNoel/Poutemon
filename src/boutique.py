@@ -7,10 +7,6 @@ from objets import *
 class boutique():
 
     def __init__(self, screen, Avancement, joueur):
-<<<<<<< HEAD
-=======
-        # Images
->>>>>>> 4c5e4f7ce65aad7a404d43e699f8a19c4a314507
         self.fond = pygame.image.load("./resources/boutique/shop_pokemon.jpg")
         self.fond = pygame.transform.scale(self.fond, (1500, 1000))
         self.pokeball_img = pygame.image.load("./resources/boutique/pokeball.png")
@@ -41,8 +37,10 @@ class boutique():
         self.avancement = Avancement
         self.screen = screen
 
+
     def main(self):
         self.blitbase()
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
@@ -50,15 +48,29 @@ class boutique():
                 if self.rect_pokeball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.pokeballCost:
                         self.argent = self.argent - self.pokeballCost
+                        self.joueur.set_argentmoins(self.argent)
+                        print (self.joueur.get_argent())
                         self.itemsPokeball += 1
+                        print(self.itemsPokeball)
+                        self.joueur.set_pokeball(self.itemsPokeball)
+
                 elif self.rect_superball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.superballCost:
                         self.argent = self.argent - self.superballCost
+                        self.joueur.set_argentmoins(self.argent)
+                        print (self.joueur.get_argent())
                         self.itemsSuperball += 1
+                        self.joueur.set_superball(self.itemsSuperball)
+                        
                 elif self.rect_hyperball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.hyperballCost:
                         self.argent = self.argent - self.hyperballCost
+                        self.joueur.set_argentmoins(self.argent)
                         self.itemsHyperball += 1
+                        self.joueur.set_hyperball(self.itemsHyperball)
+                elif self.rect_quitter.collidepoint(pygame.mouse.get_pos()):
+                    print(self.joueur.get_items().get("pokeball"))
+                    self.avancement.set_shop(False)
 
     def blitbase(self):
         self.screen.blit(self.fond, (0, 0))

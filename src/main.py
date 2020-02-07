@@ -6,6 +6,11 @@ from jeux import *
 from fight import *
 from boutique import *
 from pokedex import *
+from inventaire import *
+from boutique import *
+from server import *
+from player1 import *
+import subprocess
 
 
 
@@ -22,6 +27,10 @@ player = joueur()
 game = jeux(screen,Avancement,player)
 
 
+
+affpokedex = pokedex(player,screen,Avancement)
+
+
 while True:
 
     while Avancement.get_lancement() :
@@ -29,8 +38,27 @@ while True:
             if event.type == pygame.QUIT: sys.exit()
 
         lancement.main()
+    
+    while Avancement.get_host() :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
 
-    while Avancement.get_lancement()!= True and Avancement.get_jeux() and Avancement.get_combat() != True and Avancement.get_pokedex() == False:
+        subprocess.call("start python server.py")
+        # serveur = server()
+        player = player1()
+        # serveur.main()
+        player.main()
+
+
+    while Avancement.get_player() :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
+
+        player = player1()
+        player.main()
+     
+
+    while Avancement.get_lancement()!= True and Avancement.get_jeux() and Avancement.get_combat() != True and Avancement.get_pokedex() == False and Avancement.get_sac() == False and Avancement.get_shop() == False:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
@@ -47,6 +75,19 @@ while True:
     while Avancement.get_pokedex() == True :
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
+
         affpokedex = pokedex(player,screen,Avancement)
         affpokedex.main()
-            
+
+    while Avancement.get_sac() == True :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
+        sac = inventaire(screen,Avancement,player)
+        sac.main()  
+
+    while Avancement.get_shop() == True :
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: sys.exit()
+
+        shop = boutique(screen,Avancement,player)
+        shop.main() 

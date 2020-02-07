@@ -32,10 +32,14 @@ class pokedex():
     def blitbase(self):
         self.screen.blit(self.fond, (0, 0))
 
+        self.argent = self.font_obj.render(str(self.player.get_argent())+" pieces", True, (255,255,255))
+        self.screen.blit(self.argent, (600, 150))
+
+
         self.quitter = self.font_obj.render("X", True, (255,255,255))
-        self.screen.blit(self.quitter, (570, 600))
+        self.screen.blit(self.quitter, (820, 100))
         self.rect_quitter = self.quitter.get_rect()
-        self.rect_quitter.topleft = (570, 600)
+        self.rect_quitter.topleft = (820, 100)
 
         self.listepoke = self.player.get_pokemon()
         self.longueur = len(self.listepoke)

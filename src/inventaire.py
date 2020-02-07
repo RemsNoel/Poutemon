@@ -21,14 +21,26 @@ class inventaire():
         self.argent = self.joueur.get_argent()
         self.items = self.joueur.get_items()
         self.itemsPokeball = self.items.get("pokeball")
+        print (self.itemsPokeball)
         self.itemsSuperball = self.items.get("superball")
         self.itemsHyperball = self.items.get("hyperball")
 
         self.avancement = Avancement
         self.screen = screen
 
+        self.encours = True
+
     def main(self):
         self.blitbase()
+
+        while self.encours:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT: sys.exit()
+                    
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    if self.rect_quitter.collidepoint(pygame.mouse.get_pos()):
+                        self.encours = False
+                        self.avancement.set_sac(False)
 
     def blitbase(self):
         self.screen.blit(self.fond, (0, 0))
@@ -37,7 +49,7 @@ class inventaire():
         self.screen.blit(self.pokeball_img, (300, 100))
         self.crossSign = self.font_obj.render("x", False, (255,255,255))
         self.screen.blit(self.crossSign, (400, 130))
-        self.superballNb = self.font_obj.render(str(self.itemsSuperball), False, (255,255,255))
+        self.superballNb = self.font_obj.render(str(self.itemsPokeball), False, (255,255,255))
         self.screen.blit(self.superballNb, (420, 130))
 
         # Superball
@@ -58,6 +70,11 @@ class inventaire():
         self.argentJoueur = self.font_obj.render(str(self.argent), False, (255,255,255))
         self.screen.blit(self.pokepiece_img, (10,18))
         self.screen.blit(self.argentJoueur, (29,10))
+
+        self.buttonQuit = self.font_obj.render("Quitter", False, (255,255,255))
+        self.screen.blit(self.buttonQuit, (1350, 930))
+        self.rect_quitter = self.buttonQuit.get_rect()
+        self.rect_quitter.topleft = (1350,930)
 
         pygame.display.flip()
 

@@ -14,7 +14,8 @@ class jeux ():
         self.avancement = Avancement
         self.screen = screen
 
-        self.zone2 = zones("./resources/zones_debut/maison_professeur.jpg","ville","","Sortir de la ville")
+        self.zone3 = zones("./resources/zones_debut/shop_pokemon.jpg","shop","","")
+        self.zone2 = zones("./resources/zones_debut/maison_professeur.jpg","ville",self.zone3,"Aller vers la boutique")
         self.zone1 = zones("./resources/zones_debut/maison_joueur.jpg","safe",self.zone2,"Aller vers la maison du professeur")
       
         self.joueur = joueur
@@ -31,6 +32,9 @@ class jeux ():
         if self.rect_sac.collidepoint(pygame.mouse.get_pos()):
             self.screen.blit(self.highlight, (50, 580))
             pygame.display.flip()
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    self.avancement.set_sac(True)
 
         elif self.rect_pokedex.collidepoint(pygame.mouse.get_pos()):
             self.screen.blit(self.highlight, (50, 680))
@@ -42,6 +46,9 @@ class jeux ():
         elif self.rect_quitter.collidepoint(pygame.mouse.get_pos()):    
             self.screen.blit(self.highlight, (50, 930))
             pygame.display.flip()
+            for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    sys.exit()
 
         elif self.rect_balade.collidepoint(pygame.mouse.get_pos()):    
             self.screen.blit(self.highlight, (340, 710))
@@ -57,6 +64,13 @@ class jeux ():
                         pygame.display.flip()
                         pygame.time.wait(1000)
                         self.texte()
+
+                    if self.zone_actuel.get_typezone() == "shop":
+                        
+                        self.txt = self.font_obj.render('Tu te balades dans la zone ...', False, (255,255,255))
+                        pygame.time.wait(2000)
+                        self.avancement.set_shop(True)
+
                     else :
                         self.txt = self.font_obj.render('Tu te balades dans la zone ...', False, (255,255,255))
                         self.screen.blit(self.fond, (0, 0))

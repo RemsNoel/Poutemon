@@ -63,9 +63,10 @@ class player1():
             self.pokem = pokemon(self.equipe[i])
             self.pokemontext = self.font_obj20.render(str(self.pokem.get_name()), False, (255,255,255))
             self.pokemonhp = self.font_obj20.render(str(self.pokem.get_hp()), False, (255,255,255))
-            self.screen.blit(self.pokemontext, (570, 340+(i*80)))
-            self.screen.blit(self.pokemonhp, (670, 340+(i*80)))
+            self.screen.blit(self.pokemontext, (460, 15+(i*170)))
+            self.screen.blit(self.pokemonhp, (560, 15+(i*170)))
 
+<<<<<<< HEAD
             self.lancer =  self.font_obj.render('Lancer le combat', False, (255,255,255))
             self.rect_lancer = self.lancer.get_rect()
             self.rect_lancer.topleft = (110, 950)
@@ -73,9 +74,12 @@ class player1():
             pygame.display.flip()
 
             for j in range (3):
+=======
+            for j in range (4):
+>>>>>>> 17d2d1b3491d79f471641b355a44bd4806e47a2b
 
                 self.pokemontext = self.font_obj20.render(str(self.pokem.get_attaque(j)), False, (255,255,255))
-                self.screen.blit(self.pokemontext, (570, 340+(i*80+j*80)))
+                self.screen.blit(self.pokemontext, (470, 50+(i*170 + j*25)))
         
         pygame.display.flip()
     

@@ -69,13 +69,13 @@ class player1():
             self.pokem = pokemon(self.equipe[i])
             self.pokemontext = self.font_obj20.render(str(self.pokem.get_name()), False, (255,255,255))
             self.pokemonhp = self.font_obj20.render(str(self.pokem.get_hp()), False, (255,255,255))
-            self.screen.blit(self.pokemontext, (570, 340+(i*80)))
-            self.screen.blit(self.pokemonhp, (670, 340+(i*80)))
+            self.screen.blit(self.pokemontext, (460, 15+(i*170)))
+            self.screen.blit(self.pokemonhp, (560, 15+(i*170)))
 
-            for j in range (3):
+            for j in range (4):
 
                 self.pokemontext = self.font_obj20.render(str(self.pokem.get_attaque(j)), False, (255,255,255))
-                self.screen.blit(self.pokemontext, (570, 340+(i*80+j*80)))
+                self.screen.blit(self.pokemontext, (470, 50+(i*170 + j*25)))
         
         pygame.display.flip()
             

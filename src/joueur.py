@@ -7,6 +7,10 @@ class joueur():
         self.argent = 1000
         self.objet = []
         self.pokemon = ["bulbasaur","","",""]
+        self.items =  {}
+        self.items["pokeball"] = 0
+        self.items["superball"] = 0
+        self.items["hyperball"] = 0
 
     def get_pokemon(self,i):
 
@@ -19,6 +23,9 @@ class joueur():
 
     def get_argent(self):
         return self.argent
+
+    def get_items(self):
+        return self.items
 
 
 

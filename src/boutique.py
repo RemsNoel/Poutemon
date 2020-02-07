@@ -30,6 +30,10 @@ class boutique():
         self.etat = True
         self.joueur = joueur
         self.argent = self.joueur.get_argent()
+        self.items = self.joueur.get_items()
+        self.itemsPokeball = self.items.get("pokeball")
+        self.itemsSuperball = self.items.get("superball")
+        self.itemsHyperball = self.items.get("hyperball")
 
         self.avancement = Avancement
         self.screen = screen
@@ -43,12 +47,15 @@ class boutique():
                 if self.rect_pokeball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.pokeballCost:
                         self.argent = self.argent - self.pokeballCost
+                        self.itemsPokeball += 1
                 elif self.rect_superball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.superballCost:
                         self.argent = self.argent - self.superballCost
+                        self.itemsSuperball += 1
                 elif self.rect_hyperball.collidepoint(pygame.mouse.get_pos()):
                     if self.argent >= self.hyperballCost:
                         self.argent = self.argent - self.hyperballCost
+                        self.itemsHyperball += 1
 
     def blitbase(self):
         self.screen.blit(self.fond, (0, 0))
@@ -78,14 +85,34 @@ class boutique():
         self.pokeballCostStr = self.font_obj.render(str(self.pokeballCost), False, (255,255,255))
         self.screen.blit(self.pokeballCostStr, (755,255))
         self.screen.blit(self.pokepiece_img, (810,261))
+        self.crossSign = self.font_obj.render("x", False, (255,255,255))
+        self.screen.blit(self.crossSign, (843, 195))
+        self.pokeballNb = self.font_obj.render(str(self.itemsPokeball), False, (255,255,255))
+        self.screen.blit(self.pokeballNb, (860, 196))
+
         # Superball
         self.superballCostStr = self.font_obj.render(str(self.superballCost), False, (255,255,255))
         self.screen.blit(self.superballCostStr, (1050,255))
         self.screen.blit(self.pokepiece_img, (1105,261))
+        self.crossSign = self.font_obj.render("x", False, (255,255,255))
+        self.screen.blit(self.crossSign, (1138, 195))
+        self.superballNb = self.font_obj.render(str(self.itemsSuperball), False, (255,255,255))
+        self.screen.blit(self.superballNb, (1155, 196))
+
         # Hyperball
         self.hyperballCostStr = self.font_obj.render(str(self.hyperballCost), False, (255,255,255))
         self.screen.blit(self.hyperballCostStr, (1330,255))
         self.screen.blit(self.pokepiece_img, (1385,261))
+        self.crossSign = self.font_obj.render("x", False, (255,255,255))
+        self.screen.blit(self.crossSign, (1418, 195))
+        self.hyperballNb = self.font_obj.render(str(self.itemsHyperball), False, (255,255,255))
+        self.screen.blit(self.hyperballNb, (1435, 196))
+
+        # Quitter
+        self.buttonQuit = self.font_obj.render("Quitter", False, (255,255,255))
+        self.screen.blit(self.buttonQuit, (1350, 930))
+        self.rect_quitter = self.buttonQuit.get_rect()
+        self.rect_quitter.topleft = (1350,930)
 
         pygame.display.flip()
 

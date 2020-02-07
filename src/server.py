@@ -8,12 +8,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind((host, port))
 sock.listen(1)
 
-def combat(tab):
-    
-    num = "lol"
-    print(num)
-    return str(num)
-
 while True:
     print('Listen on localhost:8080')
     (sockClient, addrClient) = sock.accept()
@@ -29,7 +23,7 @@ while True:
                 break
             p2 = p.split()
             print(p2)
-            message = combat(p2)
+            message = "lol"
             sockClient.sendall(message.encode())
         sockClient.close()
     except socket.error:

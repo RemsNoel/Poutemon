@@ -8,10 +8,6 @@ class pokemon():
         url = ("https://pokeapi.co/api/v2/pokemon/"+nom+"/")
         self.r = requests.get(url)
         self.jsonfile = self.r.json()
-        
-       
-        self.front_sprite =  pygame.image.load("./resources/pokemon/front/"+str(self.jsonfile["id"])+".png")
-        self.back_sprite =  pygame.image.load("./resources/pokemon/back/"+str(self.jsonfile["id"])+".png")
 
         self.hp = int(self.jsonfile["stats"][5]["base_stat"])
         self.name = str(self.jsonfile["name"])
@@ -38,8 +34,6 @@ class pokemon():
     
     def get_attaque(self,i):
         return self.attaques[i]
-
-    
 
 
     

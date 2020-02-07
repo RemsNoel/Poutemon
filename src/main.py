@@ -1,5 +1,7 @@
 import pygame
 import sys
+import os
+import subprocess 
 from accueil import *
 from avance import *
 from jeux import *
@@ -8,11 +10,7 @@ from boutique import *
 from pokedex import *
 from inventaire import *
 from boutique import *
-from server import *
 from player1 import *
-import subprocess
-
-
 
 pygame.init()
 
@@ -38,31 +36,25 @@ while True:
             if event.type == pygame.QUIT: sys.exit()
 
         lancement.main()
+      
     
     while Avancement.get_host() :
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
-        subprocess.call("start python server.py")
-        # serveur = server()
-        player = player1()
-        # serveur.main()
-        player.main()
-
 
     while Avancement.get_player() :
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
+        
+        joueurlan = player1(screen)
+        joueurlan.main()
 
-        player = player1()
-        player.main()
-     
 
     while Avancement.get_lancement()!= True and Avancement.get_jeux() and Avancement.get_combat() != True and Avancement.get_pokedex() == False and Avancement.get_sac() == False and Avancement.get_shop() == False:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
-        
         game.main()
 
     while Avancement.get_combat() == True :

@@ -74,6 +74,7 @@ class fight():
                                 self.joueur.addpokemon(self.pokesauvage)
                                 self.combatencours = False
                                 self.tour = False
+                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(15,20))
                                 
                               
                             if self.resultatcapture == False:
@@ -91,6 +92,7 @@ class fight():
                                 self.screen.blit(self.victoire, (0, -100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
+                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(5,10))
                                 self.combatencours = False
                                 self.tour = False
                          
@@ -104,6 +106,7 @@ class fight():
                                 self.screen.blit(self.victoire, (0, -100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
+                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(5,10))
                                 self.combatencours = False
                                 self.tour = False
                    
@@ -116,6 +119,7 @@ class fight():
                                 self.screen.blit(self.victoire, (0,-100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
+                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(5,10))
                                 self.combatencours = False
                                 self.tour = False
                                 
@@ -128,6 +132,7 @@ class fight():
                                 self.screen.blit(self.victoire, (0, -100))
                                 pygame.display.flip()
                                 pygame.time.wait(1000)
+                                self.joueur.set_argentmoins(self.joueur.get_argent()+random.randint(5,10))
                                 self.combatencours = False
                                 self.tour = False
                                 
@@ -154,6 +159,7 @@ class fight():
                     else:
                         self.screen.blit(self.defaite, (0, -100))
                         pygame.display.flip()
+                        self.joueur.set_argentmoins(self.joueur.get_argent()-random.randint(40,45))
                         pygame.time.wait(1000)
                         self.combatencours = False
                         self.tour = True

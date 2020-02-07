@@ -6,7 +6,7 @@ class joueur():
     def __init__(self):
         self.argent = 1000
         self.objet = []
-        self.pokemon = ["bulbasaur","eevee"]
+        self.pokemon = ["bulbasaur"]
         self.items =  {}
         self.items["pokeball"] = 0
         self.items["superball"] = 0
